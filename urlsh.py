@@ -5,7 +5,7 @@ import random
 import os
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Needed for flashing messages
+app.secret_key = 'your_secret_key'  
 
 # Database setup
 def init_db():
@@ -37,7 +37,6 @@ def get_original_url(short_url):
         print(f"Error fetching original URL: {e}")
         return None
 
-# Store original and short URLs in the database
 def store_url(short_url, original_url):
     try:
         conn = sqlite3.connect('url_shortener.db')
